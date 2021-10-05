@@ -2,8 +2,6 @@
 import React from "react";
 // Importando os components necessários da lib react-materialize
 import { Row, Col, Card } from 'react-materialize';
-// Importando o componenet UserProfile
-import UserProfile from '../user_profile/user_profile'
 // Importando o component Experience
 import Experience from '../experience/experience'
 // Importando o avatar da empresa 1
@@ -13,11 +11,8 @@ import company_avatar2 from '../../images/company2.png';
 
 const Home = () => (
   <Row>
-    <Col m={3} s={12}>
-      <UserProfile />
-    </Col>
-    <Col m={8} s={12}>
-        <h5 className="subtitle">About Me</h5>
+    <Col m={12} s={10}>
+        <h5 className="subtitle">Sobre a a escola</h5>
         <Card>
           <div>
             <p><b>Lorem</b></p>
