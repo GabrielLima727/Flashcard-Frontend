@@ -1,13 +1,11 @@
 // Importando o React
 import React from "react";
 // Importando os components necessários da lib react-materialize
-import { Row, Col, Card } from 'react-materialize';
+import { Row, Col, Card, Input, Button  } from 'react-materialize';
 // Importando o component Experience
 import Experience from '../experience/experience'
 // Importando o avatar da empresa 1
 import company_avatar from '../../images/company.png';
-// Importando o avatar da empresa 1
-import company_avatar2 from '../../images/company2.png';
 
 const Home = () => (
   <Row>
@@ -15,27 +13,29 @@ const Home = () => (
         <h5 className="subtitle">Sobre a a escola</h5>
         <Card>
           <div>
-            <p><b>Lorem</b></p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laborevoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p><b>Sobre nós</b></p>
+            <p>Somos uma instituição focada no ensino de qualidade, visando o aprendizado de nossos alunos através de diversos cursos para aprimoramento dos mesmos. Com isso, buscamos estar crescendo cada vez mais para poder atingir um público maior.</p>
             <br/>
-            <p><b>Ipsum</b></p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laborevoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-          </div>
+            </div>
         </Card>
-        <h5 className="subtitle">Experiences</h5>
-   
-
+        <br/>
+        <h5 className="subtitle">Cursos</h5>
         {/* Passando os parâmetros title, company, description e avatar para o component Experience */}
-        <Experience title="Ruby Developer"
-                    company="Soundcloud"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laborevoluptate velit esse cillum dolore eu fugiat id est laborum."
+        <Experience title="Cursos oferecidos pela instituição"
+                    description="Entre os diversos cursos oferecidos pela nossa instituição, os mais notáveis são os de Matemática, Física, Química e os de programação (Java, Python, Ruby, etc). Confira na aba Cursos todos os quais oferecemos."
                     avatar={company_avatar}
         />
-        <Experience title="React Developer"
-                    company="Twitter"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laborevoluptate velit esse cillum dolore eu fugiat id est laborum."
-                    avatar={company_avatar2}                    
-        /> 
+        <br/>
+        <h5>Alguma dúvida? Fale conosco</h5>
+        <Card>
+          <Row>
+              <Input placeholder="Email@exeplo.com" type="email" label="Email" s={12} />
+              <Input placeholder="Digite sua mensagem..." label="Message" s={12} />
+            <Col s={12} m={12}>
+              <Button waves='light' className="right grey darken-2">Enviar</Button>
+            </Col>
+          </Row>
+        </Card>
     </Col>
   </Row>
 );
