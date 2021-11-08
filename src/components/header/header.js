@@ -4,6 +4,7 @@ import React from "react";
 import { Navbar, Row} from 'react-materialize';
 // Importando o Component NavLink da nossa lib de rotas
 import { NavLink } from 'react-router-dom'
+import api from '../../api/api';
 
 
 const Header = () => (
