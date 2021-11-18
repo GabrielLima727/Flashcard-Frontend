@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Row, Col, Input, Button, Card } from 'react-materialize'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams} from 'react-router-dom'
 import api from "../../api/api"
 
-const Form = () => {
+const FormEdit = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const {colecaoId} = useParams('');
 
-    const register = async () =>{
-		await api.post("", {nome: name, descricao: description});
+    const edit = async () =>{
+		await api.put("/" + colecaoId, {nome: name, descricao: description} )
+        .then(response => setName(response.data))
 	}
 
     return (
@@ -24,7 +26,7 @@ const Form = () => {
                 <Col s={12} m={12}>
                     <NavLink to="/cursos" ><Button waves='light' className="right grey darken-2">Cancelar</Button></NavLink>
 
-                    <NavLink to="/cursos" ><Button onClick={register} waves='light' className="right grey darken-2">Cadastrar</Button></NavLink>
+                    <NavLink to="/cursos" ><Button onClick={edit} waves='light' className="right grey darken-2">Cadastrar</Button></NavLink>
                 </Col>
             </Row>
 
@@ -40,4 +42,4 @@ const Form = () => {
     );
 }
 
-export default Form;
+export default FormEdit;
